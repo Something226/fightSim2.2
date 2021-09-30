@@ -1,10 +1,15 @@
+using System.Collections.Generic;
 using System;
 
 namespace fightSim2
 {
     public class Fighter
     {
-        private int hp = 100;
+        public Random generator = new Random();
+
+        public List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
+
+        public int hp = 100;
 
         public string name;
 
@@ -14,13 +19,18 @@ namespace fightSim2
 
         public int strength = 4;
 
+        public Fighter()
+        {
+
+        }
+
         public void GiveName()
         {
             bool named = false;
 
             while (named != true)
             {
-                Console.WriteLine("\nName Fighter:");
+                Console.WriteLine("\nName Your Fighter:");
                 name = Console.ReadLine();
 
                 string answer = "";
@@ -45,9 +55,24 @@ namespace fightSim2
             }
         }
 
+        public void GiveRandomName()
+        {
+            int select = generator.Next(enemyNames.Count);
+
+            name = enemyNames[select];
+
+        }
+
         public void Attack(Fighter target)
         {
             target.hp -= strength + weapon.Damage();
+
+            if (target.hp <= 0)
+            {
+                target.hp = 0;
+
+                target.isAlive = false;
+            }
         }
 
         public bool IsAlive()

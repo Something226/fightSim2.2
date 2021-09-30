@@ -5,7 +5,7 @@ namespace fightSim2
 {
     public class Fighter
     {
-        //variables are stated here
+        //variables for Fighter class
         private Random generator = new Random();
 
         private List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
@@ -19,10 +19,10 @@ namespace fightSim2
 
         public Weapon weapon = new Weapon();
 
-        public Fighter()
+        /*public Fighter()
         {
 
-        }
+        }*/
 
         //method that lets user name fighter
         public void GiveName()

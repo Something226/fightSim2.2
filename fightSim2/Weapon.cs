@@ -5,7 +5,7 @@ namespace fightSim2
 {
     public class Weapon
     {
-        public Random generator = new Random();
+        private Random generator = new Random();
 
         public string name;
         public string type;

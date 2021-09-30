@@ -7,8 +7,6 @@ namespace fightSim2
     {
         public Random generator = new Random();
 
-        public int dmg;
-
         public string name;
         public string type;
 

@@ -6,19 +6,18 @@ namespace fightSim2
     public class Fighter
     {
         //variables are stated here
-        public Random generator = new Random();
+        private Random generator = new Random();
 
-        public List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
+        private List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
 
         public int hp = 100;
+        private int strength = 2;
 
         public string name;
 
         public bool isAlive = true;
 
         public Weapon weapon = new Weapon();
-
-        public int strength = 2;
 
         public Fighter()
         {

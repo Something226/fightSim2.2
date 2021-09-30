@@ -79,11 +79,5 @@ namespace fightSim2
             }
         }
 
-        //returns isAlive
-        public bool IsAlive()
-        {
-            return isAlive;
-        }
-
     }
 }

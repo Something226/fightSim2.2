@@ -33,20 +33,22 @@ namespace fightSim2
 
                 Console.ReadLine();
 
-                playerFighter.IsAlive();
-                enemyFighter.IsAlive();
-
             }
 
             //if-statments checks who won
-            if (!playerFighter.isAlive)
+            if (!enemyFighter.isAlive && !playerFighter.isAlive)
+            {
+                Console.WriteLine("It's a draw!");
+            }
+            else if (!playerFighter.isAlive)
             {
                 Console.WriteLine(enemyFighter.name + " won!");
             }
-            if (!enemyFighter.isAlive)
+            else if (!enemyFighter.isAlive)
             {
                 Console.WriteLine(playerFighter.name + " won!");
             }
+
 
             Console.ReadLine();
 

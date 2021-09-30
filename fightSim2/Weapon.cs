@@ -12,7 +12,7 @@ namespace fightSim2
 
         public int Damage()
         {
-            return generator.Next(2, 4);
+            return generator.Next(4, 8);
         }
 
     }

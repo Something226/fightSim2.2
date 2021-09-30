@@ -17,7 +17,7 @@ namespace fightSim2
 
         public Weapon weapon = new Weapon();
 
-        public int strength = 4;
+        public int strength = 8;
 
         public Fighter()
         {
@@ -30,7 +30,7 @@ namespace fightSim2
 
             while (named != true)
             {
-                Console.WriteLine("\nName Your Fighter:");
+                Console.WriteLine("Name Your Fighter:");
                 name = Console.ReadLine();
 
                 string answer = "";

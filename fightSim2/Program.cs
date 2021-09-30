@@ -17,7 +17,7 @@ namespace fightSim2
 
             playerFighter.GiveName();
 
-            Console.WriteLine(playerFighter.name + " and " + enemyFighter.name + " will now figth till death!");
+            Console.WriteLine(playerFighter.name + " and " + enemyFighter.name + " will now fight till death!");
 
             while (playerFighter.isAlive || enemyFighter.isAlive)
             {
@@ -26,8 +26,22 @@ namespace fightSim2
                 enemyFighter.Attack(playerFighter);
 
                 Console.WriteLine(playerFighter.name + " attacked " + enemyFighter.name + ", " + enemyFighter.name + " now has: " + enemyFighter.hp + " HP");
-                Console.WriteLine(enemyFighter.name + " attacked " + playerFighter.name + ", " + playerFighter.name + " now has: " + playerFighter.hp + " HP");
+                Console.WriteLine(enemyFighter.name + " attacked " + playerFighter.name + ", " + playerFighter.name + " now has: " + playerFighter.hp + " HP\nPress ENTER to continue");
 
+                Console.ReadLine();
+
+                playerFighter.IsAlive();
+                enemyFighter.IsAlive();
+
+            }
+
+            if (!playerFighter.isAlive)
+            {
+                Console.WriteLine(enemyFighter.name + " won!");
+            }
+            else if (!enemyFighter.isAlive)
+            {
+                Console.WriteLine(playerFighter + " won!");
             }
 
             Console.ReadLine();

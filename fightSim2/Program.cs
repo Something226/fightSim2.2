@@ -6,9 +6,11 @@ namespace fightSim2
     {
         static void Main(string[] args)
         {
+            //Fighter instances are created here
             Fighter enemyFighter = new Fighter();
             Fighter playerFighter = new Fighter();
 
+            //inital name giving for both enemy and player
             enemyFighter.GiveRandomName();
 
             Console.WriteLine("Welcome to FightSim 2.0!\nPress Enter to continue");
@@ -19,6 +21,7 @@ namespace fightSim2
 
             Console.WriteLine(playerFighter.name + " and " + enemyFighter.name + " will now fight till death!");
 
+            //While-loop that loops the fight
             while (playerFighter.isAlive || enemyFighter.isAlive)
             {
                 playerFighter.Attack(enemyFighter);
@@ -35,6 +38,7 @@ namespace fightSim2
 
             }
 
+            //if-statments checks who won
             if (!playerFighter.isAlive)
             {
                 Console.WriteLine(enemyFighter.name + " won!");

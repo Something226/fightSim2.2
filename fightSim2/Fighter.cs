@@ -5,6 +5,7 @@ namespace fightSim2
 {
     public class Fighter
     {
+        //variables are stated here
         public Random generator = new Random();
 
         public List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
@@ -24,6 +25,7 @@ namespace fightSim2
 
         }
 
+        //method that lets user name fighter
         public void GiveName()
         {
             bool named = false;
@@ -55,6 +57,7 @@ namespace fightSim2
             }
         }
 
+        //gives a random name
         public void GiveRandomName()
         {
             int select = generator.Next(enemyNames.Count);
@@ -63,6 +66,7 @@ namespace fightSim2
 
         }
 
+        //attack-method, attacks selected target
         public void Attack(Fighter target)
         {
             target.hp -= strength + weapon.Damage();
@@ -75,6 +79,7 @@ namespace fightSim2
             }
         }
 
+        //returns isAlive
         public bool IsAlive()
         {
             return isAlive;

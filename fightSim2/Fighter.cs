@@ -18,7 +18,7 @@ namespace fightSim2
 
         public Weapon weapon = new Weapon();
 
-        public int strength = 8;
+        public int strength = 2;
 
         public Fighter()
         {

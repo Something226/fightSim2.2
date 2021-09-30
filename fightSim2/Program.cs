@@ -22,7 +22,7 @@ namespace fightSim2
             Console.WriteLine(playerFighter.name + " and " + enemyFighter.name + " will now fight till death!");
 
             //While-loop that loops the fight
-            while (playerFighter.isAlive || enemyFighter.isAlive)
+            while (playerFighter.isAlive && enemyFighter.isAlive)
             {
                 playerFighter.Attack(enemyFighter);
 
@@ -43,9 +43,9 @@ namespace fightSim2
             {
                 Console.WriteLine(enemyFighter.name + " won!");
             }
-            else if (!enemyFighter.isAlive)
+            if (!enemyFighter.isAlive)
             {
-                Console.WriteLine(playerFighter + " won!");
+                Console.WriteLine(playerFighter.name + " won!");
             }
 
             Console.ReadLine();

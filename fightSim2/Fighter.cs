@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using System;
 
@@ -10,12 +11,12 @@ namespace fightSim2
 
         private List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
 
-        public int hp = 100;
+        private int hp = 100;
         private int strength = 2;
 
-        public string name;
+        private string name;
 
-        public bool isAlive = true;
+        private bool isAlive = true;
 
         public Weapon weapon = new Weapon();
 
@@ -86,6 +87,24 @@ namespace fightSim2
 
                 target.isAlive = false;
             }
+        }
+
+        //returns isAlive
+        public bool GetAlive()
+        {
+            return isAlive;
+        }
+
+        //returns name
+        public string GetName()
+        {
+            return name;
+        }
+
+        //returns hp
+        public int GetHP()
+        {
+            return hp;
         }
 
     }

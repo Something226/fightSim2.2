@@ -21,35 +21,35 @@ namespace fightSim2
 
             Console.Clear();
 
-            Console.WriteLine(playerFighter.name + " and " + enemyFighter.name + " will now fight till death!");
+            Console.WriteLine(playerFighter.GetName() + " and " + enemyFighter.GetName() + " will now fight till death!");
 
             //While-loop that loops the fight
-            while (playerFighter.isAlive && enemyFighter.isAlive)
+            while (playerFighter.GetAlive() && enemyFighter.GetAlive())
             {
                 playerFighter.Attack(enemyFighter);
 
-                Console.WriteLine(playerFighter.name + " attacked " + enemyFighter.name + ", " + enemyFighter.name + " now has: " + enemyFighter.hp + " HP");
+                Console.WriteLine(playerFighter.GetName() + " attacked " + enemyFighter.GetName() + ", " + enemyFighter.GetName() + " now has: " + enemyFighter.GetHP() + " HP");
 
                 enemyFighter.Attack(playerFighter);
 
-                Console.WriteLine(enemyFighter.name + " attacked " + playerFighter.name + ", " + playerFighter.name + " now has: " + playerFighter.hp + " HP\nPress ENTER to continue");
+                Console.WriteLine(enemyFighter.GetName() + " attacked " + playerFighter.GetName() + ", " + playerFighter.GetName() + " now has: " + playerFighter.GetHP() + " HP\nPress ENTER to continue");
 
                 Console.ReadLine();
 
             }
 
             //if-statments checks who won
-            if (!enemyFighter.isAlive && !playerFighter.isAlive)
+            if (!enemyFighter.GetAlive() && !playerFighter.GetAlive())
             {
                 Console.WriteLine("It's a draw!");
             }
-            else if (!playerFighter.isAlive)
+            else if (!playerFighter.GetAlive())
             {
-                Console.WriteLine(enemyFighter.name + " won!");
+                Console.WriteLine(enemyFighter.GetName() + " won!");
             }
-            else if (!enemyFighter.isAlive)
+            else if (!enemyFighter.GetAlive())
             {
-                Console.WriteLine(playerFighter.name + " won!");
+                Console.WriteLine(playerFighter.GetName() + " won!");
             }
 
 

@@ -19,6 +19,8 @@ namespace fightSim2
 
             playerFighter.GiveName();
 
+            Console.Clear();
+
             Console.WriteLine(playerFighter.name + " and " + enemyFighter.name + " will now fight till death!");
 
             //While-loop that loops the fight

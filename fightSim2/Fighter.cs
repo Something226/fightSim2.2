@@ -32,8 +32,18 @@ namespace fightSim2
             while (named != true)
             {
                 Console.WriteLine("Name Your Fighter:");
-                name = Console.ReadLine();
 
+                name = "";
+                while (name == "")
+                {
+                    name = Console.ReadLine().Trim();
+
+                    if (name == "")
+                    {
+                        Console.WriteLine("Enter a name");
+                    }
+
+                }
                 string answer = "";
                 while (answer != "y" && answer != "n")
                 {

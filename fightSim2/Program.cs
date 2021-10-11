@@ -28,9 +28,10 @@ namespace fightSim2
             {
                 playerFighter.Attack(enemyFighter);
 
+                Console.WriteLine(playerFighter.name + " attacked " + enemyFighter.name + ", " + enemyFighter.name + " now has: " + enemyFighter.hp + " HP");
+
                 enemyFighter.Attack(playerFighter);
 
-                Console.WriteLine(playerFighter.name + " attacked " + enemyFighter.name + ", " + enemyFighter.name + " now has: " + enemyFighter.hp + " HP");
                 Console.WriteLine(enemyFighter.name + " attacked " + playerFighter.name + ", " + playerFighter.name + " now has: " + playerFighter.hp + " HP\nPress ENTER to continue");
 
                 Console.ReadLine();

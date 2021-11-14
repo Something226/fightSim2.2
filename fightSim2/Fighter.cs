@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using System;
 
@@ -6,6 +5,9 @@ namespace fightSim2
 {
     public class Fighter
     {
+        /* Class description */
+        /* Fighter class, template for all fighters in the game */
+
         //variables for Fighter class
         private Random number;
 

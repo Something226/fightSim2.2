@@ -5,6 +5,9 @@ namespace fightSim2
 {
     public class Weapon
     {
+        /* Class description */
+        /* Weapon class, used to modify or add damage to fighter */
+
         //variables for Weapon class
         private Random number = new Random();
 

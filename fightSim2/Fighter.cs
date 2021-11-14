@@ -7,23 +7,31 @@ namespace fightSim2
     public class Fighter
     {
         //variables for Fighter class
-        private Random generator = new Random();
+        private Random number;
 
-        private List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
-
-        private int hp = 100;
-        private int strength = 2;
-
+        private List<string> enemyNames;
+        
+        private int hp;
+        private int strength;
+        private int xp;
         private string name;
 
-        private bool isAlive = true;
+        private bool isAlive;
 
         public Weapon weapon = new Weapon();
 
-        /*public Fighter()
+        //Fighter Constructor
+        public Fighter()
         {
+            enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
 
-        }*/
+            number = new Random();
+
+            hp = 100;
+            strength = 2;
+            isAlive = true;
+
+        }
 
         //method that lets user name fighter
         public void GiveName()
@@ -70,16 +78,13 @@ namespace fightSim2
         //gives a random name
         public void GiveRandomName()
         {
-            int select = generator.Next(enemyNames.Count);
-
-            name = enemyNames[select];
-
+            name = enemyNames[number.Next(enemyNames.Count)];
         }
 
         //attack-method, attacks selected target
         public void Attack(Fighter target)
         {
-            target.hp -= strength + weapon.Damage();
+            target.hp -= strength + weapon.Damage() / 2;
 
             if (target.hp <= 0)
             {

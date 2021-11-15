@@ -9,34 +9,32 @@ namespace fightSim2
         /* Fighter class, template for all fighters in the game */
 
         //variables for Fighter class
-        private Random number;
+        protected Random number;
 
-        private List<string> enemyNames;
-        
-        private int hp;
-        private int strength;
-        private int xp;
-        private string name;
+        protected List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
 
-        private bool isAlive;
+        protected int hp;
+        protected int strength;
+        protected int dmgAmount;
+        // private int xp;
+        protected string name;
 
-        public Weapon weapon = new Weapon();
+        protected bool isAlive;
+        protected bool isEnemy;
 
-        //Fighter Constructor
+        protected Weapon weapon = new Weapon();
+
+        //Fighter Constructor, determines variables
         public Fighter()
         {
-            enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
-
             number = new Random();
 
-            hp = 100;
-            strength = 2;
             isAlive = true;
 
         }
 
         //method that lets user name fighter
-        public void GiveName()
+        public virtual void GiveName()
         {
             bool named = false;
 
@@ -86,7 +84,9 @@ namespace fightSim2
         //attack-method, attacks selected target
         public void Attack(Fighter target)
         {
-            target.hp -= strength + weapon.Damage() / 2;
+            dmgAmount = strength + weapon.Damage();
+
+            target.hp -= dmgAmount;
 
             if (target.hp <= 0)
             {
@@ -102,6 +102,12 @@ namespace fightSim2
             return isAlive;
         }
 
+        //returns isEnemy
+        public bool GetIsEnemy()
+        {
+            return isEnemy;
+        }
+
         //returns name
         public string GetName()
         {
@@ -112,6 +118,11 @@ namespace fightSim2
         public int GetHP()
         {
             return hp;
+        }
+
+        public int GetDmgAmount()
+        {
+            return dmgAmount;
         }
 
     }

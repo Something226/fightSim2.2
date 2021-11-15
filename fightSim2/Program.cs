@@ -6,10 +6,10 @@ namespace fightSim2
     {
         static void Main(string[] args)
         {
-            //Fighter instances are created here
+            //Class instances are created here
             FightSequence fightSequence = new FightSequence();
-            Fighter enemyFighter = new Fighter();
-            Fighter playerFighter = new Fighter();
+            Fighter enemyFighter = new EnemyFighter();
+            Fighter playerFighter = new PlayerFighter();
 
             //inital name giving for both enemy and player
             enemyFighter.GiveRandomName();
@@ -18,11 +18,11 @@ namespace fightSim2
 
             Console.ReadLine();
 
+            Console.Clear();
+
             playerFighter.GiveName();
 
             Console.Clear();
-
-            Console.WriteLine(playerFighter.GetName() + " and " + enemyFighter.GetName() + " will now fight till death!");
 
             fightSequence.Fight(playerFighter, enemyFighter);
 

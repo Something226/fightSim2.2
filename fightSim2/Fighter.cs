@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using System;
 
@@ -21,6 +22,8 @@ namespace fightSim2
 
         protected bool isAlive;
         protected bool isEnemy;
+
+        public static List<Fighter> activeFighters = new List<Fighter>();
 
         protected Weapon weapon = new Weapon();
 
@@ -127,10 +130,22 @@ namespace fightSim2
             return hp;
         }
 
+        //returns dmgAmount
         public int GetDmgAmount()
         {
             return dmgAmount;
         }
 
+        //creates PlayerFighter instance
+        public static void AddPlayerFighter()
+        {
+            activeFighters.Add(new PlayerFighter());
+        }
+
+        //creates EnemyFighter instance
+        public static void AddEnemyFighter()
+        {
+            activeFighters.Add(new EnemyFighter());
+        }
     }
 }

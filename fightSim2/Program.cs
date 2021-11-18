@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace fightSim2
 {
@@ -8,11 +9,14 @@ namespace fightSim2
         {
             //Class instances are created here
             FightSequence fightSequence = new FightSequence();
-            Fighter enemyFighter = new EnemyFighter();
-            Fighter playerFighter = new PlayerFighter();
+
+            Dictionary<string, Fighter> fighter = new Dictionary<string, Fighter>();
+
+            fighter.Add("player", new PlayerFighter());
+            fighter.Add("tempEnemy", new EnemyFighter());
 
             //inital name giving for both enemy and player
-            enemyFighter.GiveRandomName();
+            fighter["tempEnemy"].GiveRandomName();
 
             Console.WriteLine("Welcome to FightSim 2.0!\nPress Enter to continue");
 
@@ -20,11 +24,11 @@ namespace fightSim2
 
             Console.Clear();
 
-            playerFighter.GiveName();
+            fighter["player"].GiveName();
 
             Console.Clear();
 
-            fightSequence.Fight(playerFighter, enemyFighter);
+            fightSequence.Fight(fighter["player"], fighter["tempEnemy"]);
 
             Console.ReadLine();
 

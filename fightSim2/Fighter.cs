@@ -16,7 +16,7 @@ namespace fightSim2
         protected int hp;
         protected int strength;
         protected int dmgAmount;
-        // private int xp;
+        private int xp;
         protected string name;
 
         protected bool isAlive;
@@ -40,7 +40,14 @@ namespace fightSim2
 
             while (named != true)
             {
-                Console.WriteLine("Name Your Fighter:");
+                if (isEnemy)
+                {
+                    Console.WriteLine("Name Your Opponent:");
+                }
+                else
+                {
+                    Console.WriteLine("Name Your Fighter:");
+                }
 
                 name = "";
                 while (name == "")

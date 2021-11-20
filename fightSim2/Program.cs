@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Runtime.CompilerServices;
+using System;
 using System.Collections.Generic;
 
 namespace fightSim2
@@ -7,21 +8,20 @@ namespace fightSim2
     {
         static void Main(string[] args)
         {
+            Menu menu = new Menu();
+            FightSequence fightSequence = new FightSequence();
 
-            //inital name giving for both enemy and player
-            // fighter["tempEnemy"].GiveRandomName();
+            Console.WriteLine("hello");
+
+            Console.ReadLine();
 
 
+
+            menu.StartMenu();
 
             Console.ReadLine();
 
-            Console.Clear();
 
-            //fighter["player"].GiveName();
-
-            Console.Clear();
-
-            Console.ReadLine();
 
         }
     }

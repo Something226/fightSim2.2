@@ -10,9 +10,7 @@ namespace fightSim2
 
         public void StartMenu()
         {
-            bool selected = false;
-
-            while (!selected)
+            while (false)
             {
                 int option = 0;
 

@@ -11,11 +11,9 @@ namespace fightSim2
             Menu menu = new Menu();
             FightSequence fightSequence = new FightSequence();
 
-            Console.WriteLine("hello");
+            Console.WriteLine("hellooo");
 
             Console.ReadLine();
-
-
 
             menu.StartMenu();
 

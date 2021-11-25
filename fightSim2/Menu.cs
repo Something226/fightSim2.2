@@ -10,15 +10,17 @@ namespace fightSim2
 
         public void StartMenu()
         {
-            while (false)
+            int option = 0;
+            while (option == 0)
             {
-                int option = 0;
 
-                Console.WriteLine("Welome to FightSim 2.0!\nType the number of action and press ENTER:" + menuOptions[1] + menuOptions[2] + menuOptions[3]);
+                Console.WriteLine("Welome to FightSim 2.0!\nType the number of action and press ENTER:" + menuOptions[0] + menuOptions[1] + menuOptions[2]);
 
-                while (!int.TryParse(Console.ReadLine(), out option) || (option < menuOptions.Count || option > menuOptions.Count))
+                while (!int.TryParse(Console.ReadLine(), out option) && option < menuOptions.Count || option > menuOptions.Count)
                 {
+
                     Console.WriteLine("Please enter a valid number");
+
                 }
 
                 if (option == 1)

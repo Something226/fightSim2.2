@@ -17,6 +17,7 @@ namespace fightSim2
         protected int hp;
         protected int strength;
         protected int dmgAmount;
+
         private int xp;
         protected string name;
 
@@ -146,6 +147,15 @@ namespace fightSim2
         public static void AddEnemyFighter()
         {
             activeFighters.Add(new EnemyFighter());
+        }
+
+        public static void ListFighter()
+        {
+            Console.WriteLine($"Number of fighters: {activeFighters.Count}");
+            foreach (Fighter fighter in activeFighters)
+            {
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ namespace fightSim2
     public class Menu
     {
 
-        private List<string> menuOptions = new List<string>() { "\n1) Create your fighter", "\n2) Create enemy fighter", "\n3) fight" };
+        public List<string> menuOptions = new List<string>() { "\n1) Create Player Fighter", "\n2) Create Enemy Fighter", "\n3) List All Fighters", "\n4) Select Fighter", "\n5) Quit Game" };
 
         public void StartMenu()
         {
@@ -14,7 +14,7 @@ namespace fightSim2
             while (option == 0)
             {
 
-                Console.WriteLine("Welome to FightSim 2.0!\nType the number of action and press ENTER:" + menuOptions[0] + menuOptions[1] + menuOptions[2]);
+                Console.WriteLine("Type the number of action and press ENTER:" + menuOptions[0] + menuOptions[1] + menuOptions[2] + menuOptions[3] + menuOptions[4]);
 
                 while (!int.TryParse(Console.ReadLine(), out option) && option < menuOptions.Count || option > menuOptions.Count)
                 {
@@ -27,17 +27,34 @@ namespace fightSim2
                 {
                     Fighter.AddPlayerFighter();
                     Console.Clear();
-                    Fighter.activeFighters[0].GiveName();
+                    Console.WriteLine("New Player Fighter Created!\n");
+
+                    StartMenu();
 
                 }
                 else if (option == 2)
                 {
                     Fighter.AddEnemyFighter();
                     Console.Clear();
-                    Fighter.activeFighters[1].GiveName();
+                    Console.WriteLine("New Enemy Fighter Created!\n");
+
+                    StartMenu();
 
                 }
                 else if (option == 3)
+                {
+                    Console.Clear();
+                    Fighter.ListFighter();
+                    Console.WriteLine("\n");
+
+                    StartMenu();
+                }
+                else if (option == 4)
+                {
+                    Console.Clear();
+                    StartMenu();
+                }
+                else if (option == 5)
                 {
 
                 }

@@ -1,6 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace fightSim2
 {
@@ -33,6 +34,8 @@ namespace fightSim2
         {
             number = new Random();
 
+            GiveName();
+
             isAlive = true;
 
         }
@@ -46,11 +49,11 @@ namespace fightSim2
             {
                 if (isEnemy)
                 {
-                    Console.WriteLine("Name Your Opponent:");
+                    Console.WriteLine("\nName Your Opponent:");
                 }
                 else
                 {
-                    Console.WriteLine("Name Your Fighter:");
+                    Console.WriteLine("\nName Your Fighter:");
                 }
 
                 name = "";
@@ -149,12 +152,29 @@ namespace fightSim2
             activeFighters.Add(new EnemyFighter());
         }
 
+        //Removes Fighter instance
+        public static void RemoveFighter(string name)
+        {
+            int i = activeFighters.FindIndex(0, 1, f => f.name == name);
+
+            if (i >= 0)
+            {
+                activeFighters.RemoveAt(i);
+                Console.WriteLine("Fighter removed successfully!\n");
+            }
+            else
+            {
+                Console.WriteLine("No fighter with that name exists\n");
+            }
+        }
+
+        //Lists all current fighters
         public static void ListFighter()
         {
             Console.WriteLine($"Number of fighters: {activeFighters.Count}");
             foreach (Fighter fighter in activeFighters)
             {
-                Console.WriteLine();
+                Console.WriteLine(fighter.name);
             }
         }
     }

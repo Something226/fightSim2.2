@@ -10,11 +10,13 @@ namespace fightSim2
 
         public void StartMenu()
         {
-            int option = 0;
-            while (option == 0)
+            bool runMenu = true;
+            while (runMenu)
             {
 
                 Console.WriteLine("Type the number of action and press ENTER:" + menuOptions[0] + menuOptions[1] + menuOptions[2] + menuOptions[3] + menuOptions[4] + menuOptions[5]);
+
+                int option;
 
                 while (!int.TryParse(Console.ReadLine(), out option) || (option < 1 || option > menuOptions.Count))
                 {
@@ -29,16 +31,12 @@ namespace fightSim2
                     Console.Clear();
                     Console.WriteLine("New Player Fighter Created!\n");
 
-                    StartMenu();
-
                 }
                 else if (option == 2)
                 {
                     Fighter.AddEnemyFighter();
                     Console.Clear();
                     Console.WriteLine("New Enemy Fighter Created!\n");
-
-                    StartMenu();
 
                 }
                 else if (option == 3)
@@ -47,12 +45,10 @@ namespace fightSim2
                     Fighter.ListFighter();
                     Console.WriteLine("\n");
 
-                    StartMenu();
                 }
                 else if (option == 4)
                 {
                     Console.Clear();
-                    StartMenu();
                 }
                 else if (option == 5)
                 {
@@ -62,11 +58,10 @@ namespace fightSim2
                     Console.WriteLine("\nPlease type the name of the fighter that you wish to remove\n");
                     Fighter.RemoveFighter(Console.ReadLine().Trim());
 
-                    StartMenu();
                 }
                 else if (option == 6)
                 {
-
+                    runMenu = false;
                 }
 
             }

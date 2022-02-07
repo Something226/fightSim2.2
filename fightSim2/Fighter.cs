@@ -171,10 +171,17 @@ namespace fightSim2
         //Lists all current fighters
         public static void ListFighter()
         {
-            Console.WriteLine($"Number of fighters: {activeFighters.Count}");
-            foreach (Fighter fighter in activeFighters)
+            if (activeFighters.Count == 0)
             {
-                Console.WriteLine(fighter.name);
+                Console.WriteLine("There are no fighters at the moment");
+            }
+            else
+            {
+                Console.WriteLine($"Number of fighters: {activeFighters.Count}");
+                foreach (Fighter fighter in activeFighters)
+                {
+                    Console.WriteLine(fighter.name);
+                }
             }
         }
     }

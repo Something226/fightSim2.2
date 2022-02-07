@@ -16,7 +16,7 @@ namespace fightSim2
 
                 Console.WriteLine("Type the number of action and press ENTER:" + menuOptions[0] + menuOptions[1] + menuOptions[2] + menuOptions[3] + menuOptions[4] + menuOptions[5]);
 
-                while (!int.TryParse(Console.ReadLine(), out option) && (option < 1 || option > menuOptions.Count))
+                while (!int.TryParse(Console.ReadLine(), out option) || (option < 1 || option > menuOptions.Count))
                 {
 
                     Console.WriteLine("Please enter a valid number");

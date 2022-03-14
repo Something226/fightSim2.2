@@ -5,7 +5,7 @@ namespace fightSim2
     public class FightSequence
     {
         /* Class description */
-        /* Class creates a sequence for the fight */
+        /* Class creates a sequence for a fight */
 
         //Method that loops the fight
         public void Fight(Fighter playerFighter, Fighter enemyFighter)

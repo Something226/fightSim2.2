@@ -157,6 +157,8 @@ namespace fightSim2
         {
             int i = activeFighters.FindIndex(0, 1, f => f.name == name);
 
+
+
             if (i >= 0)
             {
                 activeFighters.RemoveAt(i);
@@ -178,10 +180,23 @@ namespace fightSim2
             else
             {
                 Console.WriteLine($"Number of fighters: {activeFighters.Count}");
+
+                activeFighters.Sort((a, b) => a.GetType().FullName.CompareTo(b.GetType().FullName));
+
+                activeFighters.Reverse();
+
                 foreach (Fighter fighter in activeFighters)
                 {
-                    Console.WriteLine(fighter.name);
+                    if (fighter is PlayerFighter)
+                    {
+                        Console.WriteLine(fighter.name + " / Player Fighter");
+                    }
+                    else
+                    {
+                        Console.WriteLine(fighter.name + " / Enemy Fighter");
+                    }
                 }
+
             }
         }
     }

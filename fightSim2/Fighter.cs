@@ -41,6 +41,7 @@ namespace fightSim2
         }
 
         //method that lets user name fighter
+        /*  */
         public virtual void GiveName()
         {
             bool named = false;
@@ -153,6 +154,7 @@ namespace fightSim2
         }
 
         //Removes Fighter instance
+        /*  */
         public static void RemoveFighter(string name)
         {
             int i = activeFighters.FindIndex(0, 1, f => f.name == name);
@@ -171,6 +173,7 @@ namespace fightSim2
         }
 
         //Lists all current fighters
+        /*  */
         public static void ListFighter()
         {
             if (activeFighters.Count == 0)

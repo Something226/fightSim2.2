@@ -7,13 +7,13 @@ namespace fightSim2
         /* Class description */
         /* Class creates a sequence for a fight */
 
-        //Method that loops the fight
+        //Fight-method, takes two fighter classes
         public void Fight(Fighter playerFighter, Fighter enemyFighter)
         {
             //Writeline tells user fight has been initiated
-            Console.WriteLine(playerFighter.GetName() + " and " + enemyFighter.GetName() + " will now fight till death!");
+            Console.WriteLine(playerFighter.GetName() + " and " + enemyFighter.GetName() + " will now fight to the death!");
 
-            //Fight-loop
+            //Fight-loop, both Fighter-classes attack each other ones per cycle of Fight-loop, if one Fighter's HP reaches 0, GetAlive = False = Loop ends
             while (playerFighter.GetAlive() && enemyFighter.GetAlive())
             {
                 playerFighter.Attack(enemyFighter);
@@ -30,7 +30,7 @@ namespace fightSim2
 
             }
 
-            //if-statments checks who won
+            //if-statments tells player who won the fight
             if (!enemyFighter.GetAlive() && !playerFighter.GetAlive())
             {
                 Console.WriteLine("It's a draw!");

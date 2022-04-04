@@ -4,8 +4,10 @@ namespace fightSim2
 {
     public class PlayerFighter : Fighter
     {
+        //Class Description
+        /* Player fighter class that inherits Fighter, is used as opponent to EnemyFighter */
 
-        //Constructor
+        //Constructor, Defines variables
         public PlayerFighter()
         {
             hp = 100;

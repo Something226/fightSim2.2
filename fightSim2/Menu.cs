@@ -8,7 +8,11 @@ namespace fightSim2
         //String-List, Lists all available options that player has, options is used in StartMenu-method
         public List<string> menuOptions = new List<string>() { "\n1) Create Player Fighter", "\n2) Create Enemy Fighter", "\n3) List All Fighters", "\n4) Select Fighter", "\n5) Remove Fighter", "\n6) Quit Game" };
 
-        //Menu method, Gives player options to choose from depending on desired action
+        /* Menu method, 
+        Gives player options to choose from depending on desired action in order to continue, 
+        User types number of desired action when prompted to, 
+        If non-available option is trying to be reached user is prompted to type a valid number */
+
         public void StartMenu()
         {
             bool runMenu = true;

@@ -5,7 +5,7 @@ namespace fightSim2
     public class Armor
     {
         /* Class description */
-        /* Armor class, modifies protection from fighter attacks */
+        /* Armor class, Modifies protection for Fighter */
 
         public int armorValue;
 

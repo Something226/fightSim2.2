@@ -10,10 +10,13 @@ namespace fightSim2
         {
             //Menu instance is created
             Menu menu = new Menu();
+
             //Fightsequence is created for future fights
             FightSequence fightSequence = new FightSequence();
+
             //Initial message player sees
             Console.WriteLine("Welome to FightSim 2.0!\n");
+
             //Menu StartMenu-method is ran here
             menu.StartMenu();
 

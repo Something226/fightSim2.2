@@ -14,6 +14,8 @@ namespace fightSim2
 
             strength = 2;
 
+            GiveName();
+
             isEnemy = false;
         }
 

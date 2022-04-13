@@ -13,19 +13,20 @@ namespace fightSim2
         //variables for Fighter class
         protected Random number;
 
+        //List with a set of names that will potentially be used to randomize enemyFighter name
         protected List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
 
         protected int hp;
         protected int strength;
         protected int dmgAmount;
 
-        private int xp;
         protected string name;
 
         protected bool isAlive;
         protected bool isEnemy;
 
         public static List<Fighter> activeFighters = new List<Fighter>();
+        public static Queue<Fighter> queueFighter = new Queue<Fighter>();
 
         protected Weapon weapon = new Weapon();
 
@@ -34,14 +35,12 @@ namespace fightSim2
         {
             number = new Random();
 
-            GiveName();
-
             isAlive = true;
 
         }
 
         //method that lets user name fighter
-        /*  */
+        /* bool named returns true if GiveName is finished, when name is given player is prompted to accept name, if name is not accepted named = false */
         public virtual void GiveName()
         {
             bool named = false;
@@ -96,7 +95,7 @@ namespace fightSim2
             name = enemyNames[number.Next(enemyNames.Count)];
         }
 
-        //attack-method, attacks selected target
+        //attack-method, attacks selected target, uses weapon class to deal dmg
         public void Attack(Fighter target)
         {
             dmgAmount = strength + weapon.Damage();
@@ -154,7 +153,7 @@ namespace fightSim2
         }
 
         //Removes Fighter instance
-        /*  */
+        /* Finds index where fighter is ocated in activeFighters, if no correlating index is found no fighter gets removed */
         public static void RemoveFighter(string name)
         {
             int i = activeFighters.FindIndex(0, 1, f => f.name == name);
@@ -172,8 +171,13 @@ namespace fightSim2
             }
         }
 
+        public static void QueueFighter()
+        {
+            System.Console.WriteLine("Select fighters you want to fight!");
+        }
+
         //Lists all current fighters
-        /*  */
+        /* Lists fighters from activeFighters if Fighter-instances exists, includes differing between enemy and player, amount of fighters will also be displayed */
         public static void ListFighter()
         {
             if (activeFighters.Count == 0)

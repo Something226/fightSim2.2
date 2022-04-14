@@ -14,7 +14,7 @@ namespace fightSim2
 
             strength = 2;
 
-            GiveRandomName();
+            GiveName();
 
             isEnemy = true;
         }

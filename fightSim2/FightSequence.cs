@@ -8,7 +8,7 @@ namespace fightSim2
         /* Class creates a sequence for a fight, will be used by player to progress their fighter and allow for custom battles */
 
         //Fight-method, takes two fighter classes
-        public void Fight(Fighter playerFighter, Fighter enemyFighter)
+        public static void Fight(Fighter playerFighter, Fighter enemyFighter)
         {
             //Writeline tells user fight has been initiated, Fighter.GetName used to display names of fighters to user
             Console.WriteLine(playerFighter.GetName() + " and " + enemyFighter.GetName() + " will now fight to the death!");

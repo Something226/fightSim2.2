@@ -28,8 +28,6 @@ namespace fightSim2
         public static List<Fighter> activeFighters = new List<Fighter>();
         public static Queue<Fighter> queueFighter = new Queue<Fighter>();
 
-        protected Weapon weapon = new Weapon();
-
         //Fighter Constructor, determines variables
         public Fighter()
         {
@@ -98,7 +96,8 @@ namespace fightSim2
         //attack-method, attacks selected target, uses weapon class to deal dmg
         public void Attack(Fighter target)
         {
-            dmgAmount = strength + weapon.Damage();
+
+            dmgAmount = strength;
 
             target.hp -= dmgAmount;
 
@@ -158,8 +157,6 @@ namespace fightSim2
         {
             int i = activeFighters.FindIndex(0, 1, f => f.name == name);
 
-
-
             if (i >= 0)
             {
                 activeFighters.RemoveAt(i);
@@ -171,9 +168,22 @@ namespace fightSim2
             }
         }
 
-        public static void QueueFighter()
+        public static void SelectFighter(string name)
         {
-            System.Console.WriteLine("Select fighters you want to fight!");
+
+            if (activeFighters.Count > 0)
+            {
+                int i = activeFighters.FindIndex(0, 1, f => f.name == name);
+
+                if (i >= 0)
+                {
+                    Console.WriteLine("Fighter selected successfully!\n");
+                }
+                else
+                {
+                    Console.WriteLine("No fighter with that name exists\n");
+                }
+            }
         }
 
         //Lists all current fighters

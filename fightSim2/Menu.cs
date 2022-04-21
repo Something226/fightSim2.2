@@ -53,14 +53,14 @@ namespace fightSim2
                 }
                 else if (option == 4)
                 {
-                    Fighter.ListFighter();
+                    Fighter.ListFighter(1);
 
                     if (Fighter.activeFighters.Count > 0)
                     {
                         Fighter.SelectFighter(Console.ReadLine().Trim());
                     }
 
-                    Console.WriteLine("\n");
+                    Console.Clear();
                 }
                 else if (option == 5)
                 {

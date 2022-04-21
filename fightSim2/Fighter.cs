@@ -168,16 +168,33 @@ namespace fightSim2
             }
         }
 
+        //Method that is used to select two fighters for fightSequence
+        /*  */
         public static void SelectFighter(string name)
         {
 
-            if (activeFighters.Count > 0)
+            int selectedAmount = 0;
+
+            while (activeFighters.Count > 0 && selectedAmount < 2)
             {
+                if (selectedAmount == 0)
+                {
+                    Console.WriteLine("Select Player Fighter!");
+                }
+                else
+                {
+                    Console.WriteLine("Select Enemy FIghter!");
+                }
+
                 int i = activeFighters.FindIndex(0, 1, f => f.name == name);
 
                 if (i >= 0)
                 {
                     Console.WriteLine("Fighter selected successfully!\n");
+                    System.Console.WriteLine(i);
+                    Console.ReadLine();
+
+                    selectedAmount++;
                 }
                 else
                 {
@@ -187,8 +204,9 @@ namespace fightSim2
         }
 
         //Lists all current fighters
-        /* Lists fighters from activeFighters if Fighter-instances exists, includes differing between enemy and player, amount of fighters will also be displayed */
-        public static void ListFighter()
+        /* Lists fighters from activeFighters if Fighter-instances exists, includes differing between enemy and player, amount of fighters will also be displayed, 
+            fighterType defines which fighter type will be listed, fighterType 1 = Player Fighter, fighterType 2 = Enemy Fighter, fighterType 3 = All Fighters*/
+        public static void ListFighter(int fighterType)
         {
             if (activeFighters.Count == 0)
             {
@@ -204,11 +222,19 @@ namespace fightSim2
 
                 foreach (Fighter fighter in activeFighters)
                 {
-                    if (fighter is PlayerFighter)
+                    if (fighter is PlayerFighter && fighterType == 1)
                     {
                         Console.WriteLine(fighter.name + " / Player Fighter");
                     }
-                    else
+                    else if (fighter is EnemyFighter && fighterType == 2)
+                    {
+                        Console.WriteLine(fighter.name + " / Enemy Fighter");
+                    }
+                    else if (fighter is PlayerFighter && fighterType == 3)
+                    {
+                        Console.WriteLine(fighter.name + " / Player Fighter");
+                    }
+                    else if (fighter is EnemyFighter && fighterType == 3)
                     {
                         Console.WriteLine(fighter.name + " / Enemy Fighter");
                     }

@@ -47,7 +47,7 @@ namespace fightSim2
                 else if (option == 3)
                 {
                     Console.Clear();
-                    Fighter.ListFighter();
+                    Fighter.ListFighter(3);
                     Console.WriteLine("\n");
 
                 }
@@ -65,7 +65,7 @@ namespace fightSim2
                 else if (option == 5)
                 {
                     Console.Clear();
-                    Fighter.ListFighter();
+                    Fighter.ListFighter(3);
 
                     Console.WriteLine("\nPlease type the name of the fighter that you wish to remove\n");
                     Fighter.RemoveFighter(Console.ReadLine().Trim());

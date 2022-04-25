@@ -13,6 +13,8 @@ namespace fightSim2
         //variables for Fighter class
         protected Random number;
 
+        Weapon weapon = new Weapon();
+
         //List with a set of names that will potentially be used to randomize enemyFighter name
         protected List<string> enemyNames = new List<string>() { "Arnold", "Script Kid", "Mikael Bergström", "Crewmate", "Walter White" };
 
@@ -97,7 +99,7 @@ namespace fightSim2
         public void Attack(Fighter target)
         {
 
-            dmgAmount = strength;
+            dmgAmount = strength + weapon.Damage();
 
             target.hp -= dmgAmount;
 
@@ -183,7 +185,7 @@ namespace fightSim2
                 }
                 else
                 {
-                    Console.WriteLine("Select Enemy FIghter!");
+                    Console.WriteLine("Select Enemy Fighter!");
                 }
 
                 int i = activeFighters.FindIndex(0, 1, f => f.name == name);
